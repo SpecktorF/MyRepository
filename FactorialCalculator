@@ -1,1 +1,31 @@
+import java.util.Scanner;
 
+public class FactorialCalculator {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        int sum = 1;
+
+         while (true) {
+            if (scanner.hasNext("q")) break;
+
+            if (scanner.hasNextInt()) {
+                int value = scanner.nextInt();
+                if (value > 0 && value < 13) {
+                    for (int i = 1; i <= value; i++) {
+                        sum = sum * i;
+                    }
+                    System.out.println("Factorial of " + value + " is " + sum);
+                    sum = 1;
+                } else {
+                    System.out.println("Enter number 1-12");
+                }
+            } else {
+                System.out.println("Not a integer");
+                scanner.nextLine();
+            }
+
+        }
+    }
+}
